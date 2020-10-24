@@ -1,6 +1,8 @@
 import nimpy
 
-import simba/lcg
+include simba/fun
 
-proc greet(name: string): string {.exportpy.} =
-  return "Hello, " & name
+
+proc pyNewFairDice*(seed: uint32 = 4): FairDice {.exportpy.} =
+  result.new
+  result.seed = seed
